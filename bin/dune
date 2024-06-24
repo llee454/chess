@@ -1,0 +1,19 @@
+(executable
+  (name main)
+  (libraries
+    core
+    lwt
+    lwt.unix
+    chess
+    ocaml_math
+  )
+  (link_flags -cclib -lgsl -cclib -lgslcblas)
+  (preprocess (pps
+    ppx_jane
+    lwt_ppx
+    ppx_deriving_yojson
+    ppx_expect
+    ppx_blob
+  ))
+  (modes exe)
+)
